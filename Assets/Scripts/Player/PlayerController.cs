@@ -8,13 +8,13 @@ public class PlayerController : MonoBehaviour
 {
     public event Action Fire;
 
-    private float speed;
+    private float speed = 4f;
     private Vector2 moveInput;
 
     [SerializeField] private Transform cameraContainer;
     private float camxRot;
-    private float xLook;
-    private float sensitive;
+    private float xLook = 70f;
+    private float sensitive = 0.1f;
     private Vector2 mouseDelta;
 
     private Rigidbody rb;
@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void FixedUpdate()
@@ -73,6 +78,6 @@ public class PlayerController : MonoBehaviour
         camxRot += mouseDelta.y * sensitive;
         camxRot = Mathf.Clamp(camxRot, -xLook, xLook);
         cameraContainer.localEulerAngles = new Vector3(-camxRot, 0, 0);
-        transform.eulerAngles = new Vector3(0, mouseDelta.x * sensitive, 0);
+        transform.eulerAngles += new Vector3(0, mouseDelta.x * sensitive, 0);
     }
 }
