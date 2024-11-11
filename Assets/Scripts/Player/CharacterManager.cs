@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class CharacterManaver : MonoBehaviour
+public class CharacterManager : MonoBehaviour
 {
-    public static CharacterManaver Instance;
+    public static CharacterManager Instance;
 
     public Player Player;
 }

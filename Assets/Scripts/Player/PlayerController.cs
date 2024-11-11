@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public event Action Move;
     public event Action Fire;
 
     private float speed;
@@ -23,6 +22,16 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+    private void FixedUpdate()
+    {
+        OnMove();
+    }
+
+    private void LateUpdate()
+    {
+        OnLook();
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
@@ -48,5 +57,22 @@ public class PlayerController : MonoBehaviour
         {
             Fire?.Invoke();
         }
+    }
+
+    public void OnMove()
+    {
+        Vector3 dir = transform.forward * moveInput.y + transform.right * moveInput.x;
+        dir *= speed;
+        dir.y = rb.velocity.y;
+
+        rb.velocity = dir;
+    }
+
+    public void OnLook()
+    {
+        camxRot += mouseDelta.y * sensitive;
+        camxRot = Mathf.Clamp(camxRot, -xLook, xLook);
+        cameraContainer.localEulerAngles = new Vector3(-camxRot, 0, 0);
+        transform.eulerAngles = new Vector3(0, mouseDelta.x * sensitive, 0);
     }
 }
