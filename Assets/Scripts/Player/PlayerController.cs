@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public event Action Fire;
-
     private float speed = 4f;
     private Vector2 moveInput;
 
@@ -60,7 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started)
         {
-            Fire?.Invoke();
+            CharacterManager.Instance.Player.Weapon.Fire();
         }
     }
 
