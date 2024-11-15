@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2554439918024547591}
   - component: {fileID: 6526099311974165538}
   - component: {fileID: 3697184262945385037}
+  - component: {fileID: -1692344842505378546}
   m_Layer: 0
   m_Name: Granade
   m_TagString: Untagged
@@ -133,3 +134,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-1692344842505378546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642973687617508002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2cc91a9eded17f44ae82f88e8adb644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 8642973687617508002}

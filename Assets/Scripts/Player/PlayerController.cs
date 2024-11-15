@@ -62,6 +62,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnQuickSkill(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Started)
+        {
+            CharacterManager.Instance.Player.QuickSlot.Fire();
+        }
+    }
+
     public void OnMove()
     {
         Vector3 dir = transform.forward * moveInput.y + transform.right * moveInput.x;

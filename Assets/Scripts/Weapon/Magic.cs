@@ -4,13 +4,10 @@ public class Magic : Weapon
 {
     public override void Fire()
     {
-        if (CharacterManager.Instance.Player.Weapon == this)
+        for (int i = 0; i < 10; i++)
         {
-            for(int i = 0; i < 10; i++)
-            {
-                _bulletRB = Instantiate(BulletPrefab, _camera.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-                _bulletRB.AddForce(AimCircle(_bulletRB, i), ForceMode.Impulse);
-            }
+            _bulletRB = Instantiate(BulletPrefab, _camera.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            _bulletRB.AddForce(AimCircle(_bulletRB, i), ForceMode.Impulse);
         }
     }
     public override Vector3 Aim()

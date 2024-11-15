@@ -215,6 +215,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1592413652}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &597729687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 597729688}
+  - component: {fileID: 597729689}
+  m_Layer: 0
+  m_Name: SkillSlot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &597729688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597729687}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 769407854}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &597729689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597729687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c00e158d6eca5349b3b3fdb8bac152d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 8642973687617508002, guid: 5c944eb52ad74d0449c3b071ffedf54b, type: 3}
 --- !u!1 &650846935
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +534,7 @@ Transform:
   - {fileID: 2076451413}
   - {fileID: 2072820851}
   - {fileID: 1089407539}
+  - {fileID: 597729688}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &769407855
@@ -564,6 +610,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 09f51234-2d8a-4c3d-bbdc-df6531d1daba
     m_ActionName: Action/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 769407856}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnQuickSkill
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4920240c-c43b-4cba-b6cf-41ada9746bdd
+    m_ActionName: Action/QuickSkill[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Action
@@ -597,6 +659,7 @@ MonoBehaviour:
   Controller: {fileID: 0}
   Weapon: {fileID: 1089407540}
   WeaponTransform: {fileID: 2072820851}
+  QuickSlot: {fileID: 597729689}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,10 +793,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1089407538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c00e158d6eca5349b3b3fdb8bac152d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bb300a5d598ad54aab59914a3d340d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 8642973687617508002, guid: 5c944eb52ad74d0449c3b071ffedf54b, type: 3}
+  BulletPrefab: {fileID: 754578801060980026, guid: a0c7d99bb64961841b2ce79c1e92625e, type: 3}
 --- !u!1 &1547118880
 GameObject:
   m_ObjectHideFlags: 0

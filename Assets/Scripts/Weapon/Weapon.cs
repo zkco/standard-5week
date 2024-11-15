@@ -9,18 +9,15 @@ public abstract class Weapon : MonoBehaviour
     protected Rigidbody _bulletRB;
     protected Camera _camera;
 
-    public virtual void Fire()
-    {
-        if (CharacterManager.Instance.Player.Weapon == this)
-        {
-            _bulletRB = Instantiate(BulletPrefab, _camera.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            _bulletRB.AddForce(Aim(), ForceMode.Impulse);
-        }
-    }
-    public abstract Vector3 Aim();
-
     protected virtual void Awake()
     {
         _camera = Camera.main;
     }
+
+    public virtual void Fire()
+    {
+        _bulletRB = Instantiate(BulletPrefab, _camera.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+        _bulletRB.AddForce(Aim(), ForceMode.Impulse);
+    }
+    public abstract Vector3 Aim();
 }
