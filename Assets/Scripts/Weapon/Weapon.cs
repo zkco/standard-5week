@@ -1,7 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public interface IWeapon
+{
+    public void Fire();
 
+    public Vector3 Aim();
+}
 public abstract class Weapon : MonoBehaviour
 {
     //public WeaponData Data;
@@ -9,7 +14,7 @@ public abstract class Weapon : MonoBehaviour
     protected Rigidbody _bulletRB;
     protected Camera _camera;
 
-    protected virtual void Awake()
+    protected void Awake()
     {
         _camera = Camera.main;
     }

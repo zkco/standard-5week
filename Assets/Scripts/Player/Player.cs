@@ -16,6 +16,11 @@ public class Player : MonoBehaviour
         Controller = GetComponent<PlayerController>();
     }
 
+    private void Start()
+    {
+        QuickSlot = GameObject.Find("SkillSlot").GetComponent<Weapon>();
+    }
+
     private void Update()
     {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2)).direction, Color.red);
